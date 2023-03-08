@@ -1,9 +1,13 @@
 package com.bendmaryland.learnspringframework.game;
 
-public class GameRunner {
-    GamingConsole game;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-    public GameRunner(GamingConsole game) {
+@Component
+public class GameRunner {
+ private    GamingConsole game;
+
+    public GameRunner(@Qualifier("SuperContraGameQualifier") GamingConsole game) {
         this.game = game;
     }
 
